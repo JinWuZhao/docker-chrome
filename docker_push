@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+docker push jinwuzhao/chrome
+docker tag jinwuzhao/chrome jinwuzhao/chrome:$TRAVIS_TAG
+docker push jinwuzhao/chrome:$TRAVIS_TAG
+docker logout
