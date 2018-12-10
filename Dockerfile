@@ -37,7 +37,6 @@ RUN apt-get update && apt-get install -y \
 	libpango1.0-0 \
 	libpulse0 \
 	libv4l-0 \
-        fonts-droid \
         ttf-wqy-zenhei \
         ttf-wqy-microhei \
         fonts-arphic-ukai \
