@@ -1,0 +1,3 @@
+#!/bin/sh
+
+x11docker --lang=zh_CN.UTF-8 --nxagent --pulseaudio -- --cpus=2 --memory=1g --shm-size=1g -- jinwuzhao/chrome --no-sandbox
