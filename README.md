@@ -19,7 +19,7 @@ Improves Chinese font display of the chrome image in https://github.com/jessfraz
 ## Usages
 - Launch Chrome as seamless applications:
 ```
-x11docker --lang=zh_CN.UTF-8 --nxagent --pulseaudio -- jinwuzhao/chrome --no-sandbox
+x11docker --lang=zh_CN.UTF-8 --nxagent --pulseaudio --clipboard -- jinwuzhao/chrome --no-sandbox
 ```
 
 - Launch Chrome in xpra environment:
@@ -40,5 +40,5 @@ allowed_users=anybody
 Generally because of the default resource limits of docker.  
 I recommend to launch Chrome likes this:  
 ```
-x11docker --lang=zh_CN.UTF-8 --nxagent --pulseaudio -- --cpus=2 --memory=1g --shm-size=1g -- jinwuzhao/chrome --no-sandbox
+x11docker --lang=zh_CN.UTF-8 --nxagent --pulseaudio --clipboard -- --cpus=2 --memory=1g --shm-size=1g -- jinwuzhao/chrome --no-sandbox
 ```
