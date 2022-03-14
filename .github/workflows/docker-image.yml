@@ -17,11 +17,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: REF_TYPE
-        run: echo ${{ github.REF_NAME }}
-
       - name: Build only
-        if: ${{ env.GITHUB_REF_TYPE != 'tag' }}
+        if: ${{ github.REF_NAME != 'tag' }}
         uses: docker/build-push-action@v2
         with:
           context: .
@@ -29,16 +26,16 @@ jobs:
           tags: jinwuzhao/chrome:latest
 
       - name: Login to DockerHub
-        if: ${{ env.GITHUB_REF_TYPE == 'tag' }}
+        if: ${{ github.REF_NAME == 'tag' }}
         uses: docker/login-action@v1
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build and push
-        if: ${{ env.GITHUB_REF_TYPE == 'tag' }}
+        if: ${{ github.REF_NAME == 'tag' }}
         uses: docker/build-push-action@v2
         with:
           context: .
           push: true
-          tags: jinwuzhao/chrome:latest,jinwuzhao/chrome:${{ env.GITHUB_REF_NAME }}
+          tags: jinwuzhao/chrome:latest,jinwuzhao/chrome:${{ github.REF_NAME }}
