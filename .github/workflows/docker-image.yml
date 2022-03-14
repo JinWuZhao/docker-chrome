@@ -16,6 +16,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        run: echo ${{ env.GITHUB_REF_NAME }}
 
       - name: Build only
         if: ${{ env.GITHUB_REF_TYPE != 'tag' }}
