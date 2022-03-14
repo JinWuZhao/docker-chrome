@@ -26,6 +26,4 @@ jobs:
         with:
           context: .
           push: ${{ env.GITHUB_REF_TYPE == 'tag' }}
-          tags: |
-            jinwuzhao/chrome:latest
-            jinwuzhao/chrome:${{ env.GITHUB_REF_NAME }}
+          tags: jinwuzhao/chrome:latest,jinwuzhao/chrome:${{ env.GITHUB_REF_NAME }}
