@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+
+      - name: REF_TYPE
         run: echo ${{ env.GITHUB_REF_NAME }}
 
       - name: Build only
